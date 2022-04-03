@@ -44,8 +44,13 @@
                             <li class="nav-item active"><a class="nav-link" href="{% url 'api-view'  %}">API view</a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'api-new'  %}">API create</a></li>
+                            {% if student.id %}
                             <li class="nav-item"><a class="nav-link" href="{% url 'api-update' student.id %}">API
                                     Update</a></li>
+                            {%else%}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'api-update' 1 %}">API
+                                    Update</a></li>
+                            {%endif%}
 
                         </ul>
                     </div>
@@ -53,10 +58,13 @@
             </nav>
             <!-- Page content-->
             <div class="container-fluid">
+                {% if student.id %}
                 <h1 class="mt-4">{{ student.first_name}} {{ student.last_name }}</h1>
                 <h5><strong>Date of birth :</strong> {{ student.dob }}</h5>
                 <h4><strong>Due Amount:</strong> ${{ student.amount_due|floatformat:2 }}</h4>
-
+                {%else%}
+                <h3>To view student's information, select any student from the left list </h3>
+                {%endif%}
 
             </div>
         </div>
