@@ -24,7 +24,7 @@ SECRET_KEY = 'aywdcgi@!l0$y!rfgcv6eutfc=7v6e1)a*iamctkej^zrs067o'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1',
-                 'restful-api-demo.herokuapp.com']
+                 'restful-api-ass.herokuapp.com']
 
 # Application definition
 INSTALLED_APPS = [
