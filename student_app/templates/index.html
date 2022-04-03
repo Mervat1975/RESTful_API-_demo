@@ -23,7 +23,8 @@
                 {% for student in students %}
 
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"
-                    href="{% url 'show-student' student.id %}">{{ student.first_name }} {{ student.last_name }}</a>
+                    href="{% url 'show-student' student.id %}"><strong>{{ student.id }}: </strong>
+                    {{student.first_name}} {{ student.last_name }}</a>
                 {% endfor %}
 
 
@@ -59,7 +60,9 @@
             <!-- Page content-->
             <div class="container-fluid">
                 {% if student.id %}
+
                 <h1 class="mt-4">{{ student.first_name}} {{ student.last_name }}</h1>
+                <h5><strong>ID:</strong>{{ student.id}} </h5>
                 <h5><strong>Date of birth :</strong> {{ student.dob }}</h5>
                 <h4><strong>Due Amount:</strong> ${{ student.amount_due|floatformat:2 }}</h4>
                 {%else%}
